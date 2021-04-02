@@ -79,7 +79,7 @@ def train_RBM(rbm, epochs, lr, taille_batch, data):
 
     return rbm, err_eqm
 
-def generer_image_RBM(rbm, nb_images, iter_gibbs):
+def generer_image_RBM(rbm, nb_images, iter_gibbs, visualize = True):
 
   p, q = rbm.a.shape[1], rbm.b.shape[1]
   imgs = []
@@ -93,10 +93,11 @@ def generer_image_RBM(rbm, nb_images, iter_gibbs):
 
     #fin generation
     imgs.append(1 * v.reshape(20, 16))
-    plt.figure()
-    plt.imshow(imgs[-1], cmap='gray') # AlphaDigits
-    plt.title("Generated image after {0} iterations".format(iter_gibbs))
-    plt.show()
+    if visualize:
+        plt.figure()
+        plt.imshow(imgs[-1], cmap='gray') # AlphaDigits
+        plt.title("Generated image after {0} iterations".format(iter_gibbs))
+        plt.show()
 
   return np.array(imgs)
 

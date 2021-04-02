@@ -130,7 +130,7 @@ def sigmoid(x):
   return (1 / (1 + np.exp(-x)))
 
 
-def plot_examples_alphadigits(X_train, x_generated):
+def plot_examples_alphadigits(X_train, x_generated, nb_iterations, outputpath = '../images/'):
     """
     takes as input X_train (alphadigits stacked into rows) and x_generated a tensor of dimensiosn n_images x 20 x 16
     plots a comparaison between generated and training examples..
@@ -141,17 +141,21 @@ def plot_examples_alphadigits(X_train, x_generated):
     rows = 2
     samples = np.random.choice(np.arange(X_train.shape[0]), size=columns, replace=False)
 
+    plt.title("{0} examples generated with {1} Gibbs iterations".format(n_generated, nb_iterations))
+    plt.axis('off')
     for i in range(1, columns * rows + 1):
         fig.add_subplot(rows, columns, i)
         if i > columns:
             plt.imshow(X_train[i].reshape(20, 16), cmap='gray')
-            plt.title('ex {0}'.format(samples[i - columns - 1]))
+            plt.title('ex {0}'.format(samples[i - columns - 1]), y=-0.2)
         else:
             plt.imshow(x_generated[i - 1], cmap='gray')
-            plt.title('generated ex {0}'.format(i))
+            plt.title('generated ex {0}'.format(i), y=-0.2)
         plt.axis('off')
-
+    if outputpath.split('/')[-1] != "images":
+        plt.savefig('{0}.png'.format(outputpath))
     plt.show()
+
 
 
 def visualize_mnist_examples(X_train, y_train, num_row = 3, num_col = 5):
@@ -160,7 +164,7 @@ def visualize_mnist_examples(X_train, y_train, num_row = 3, num_col = 5):
     plot num_row + num_col examples randomly selected from X_train
     """
 
-    num = num_row + num_col
+    num = num_row * num_col
     indices = np.random.choice(np.arange(X_train.shape[0]), size=num)
     images = X_train[indices]
     labels = np.argmax(y_train[indices], axis=1)
@@ -173,7 +177,7 @@ def visualize_mnist_examples(X_train, y_train, num_row = 3, num_col = 5):
         ax.set_title('Label: {}'.format(labels[i]))
         ax.axis('off')
     plt.tight_layout()
-    plt.savefig('{0}{1}.png'.format(imagepath, 'MNIST_plot'))
+    plt.savefig('{0}{1}.png'.format(imagepath, 'mnist_plot'))
     plt.show()
 
 def visualize_alphadigits_examples(num_row = 3, num_col = 5):
@@ -182,7 +186,7 @@ def visualize_alphadigits_examples(num_row = 3, num_col = 5):
     plot num_row + num_col examples randomly selected from X_train
     """
 
-    num = num_row + num_col
+    num = num_row * num_col
     characters = ['{0}'.format(i) for i in range(10)] + list(map(chr, range(65, 91)))
     indices = np.random.choice(np.arange(len(characters)), size=num)
 
@@ -195,7 +199,7 @@ def visualize_alphadigits_examples(num_row = 3, num_col = 5):
 
     # plot images
     fig, axes = plt.subplots(num_row, num_col, figsize=(1.5 * num_col, 2 * num_row))
-    for i in range(len(num)):
+    for i in range(num):
         ax = axes[i // num_col, i % num_col]
         ax.imshow(images[i].reshape(20, 16), cmap='gray')
         ax.set_title('Label: {}'.format(labels[i]))

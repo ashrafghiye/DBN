@@ -1,5 +1,9 @@
-import utils
+"""
+Plotting some examples for the MNIST and AlphaDigits datasets.
+Plots are saved in ../images folder
+"""
 
+import utils
 
 
 X_train, _, y_train, _ = utils.load_mnist()
