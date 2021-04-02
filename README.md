@@ -3,9 +3,9 @@ Deep Learning II project: DBN-DNN
 
 This project has two goals
 
-First, it aims to implement a Restricted Boltzman Machine and Deep Belief Networks and use them as Generative Models on the AlphaDigits dataset.
+First, it aims to implement a Restricted Boltzman Machine and a Deep Belief Network and use them as Generative Models.
 
-Second, it aims to study the effect of pre-training a Deep Neural Network using DBN before handling a classification task on the MNIST dataset.
+Second, it aims to study the classification of handwritten digits using a randomly initialized DNN and another DNN pre-trained using DBN.
 
 
 ## Content
