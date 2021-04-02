@@ -10,6 +10,7 @@ import os
 import wget
 
 datapath = '../data/'
+imagepath = '../images/'
 
 def load_mnist():
     """
@@ -38,11 +39,12 @@ def load_mnist():
     X_test, y_test = mnist.data[test_idx], mnist.target[test_idx].astype(int)
 
     # Binarization
-    X_train[X_train > 0] = 1
-    X_test[X_test > 0] = 1
+    threshold = 100
+    X_train = np.array(X_train >= threshold, dtype=np.int8)
+    X_test = np.array(X_test >= threshold, dtype=np.int8)
 
     # One-hot encoding
-    n_values = np.max(y_train) + 1
+    n_values = np.max(y_train) + 1  # vector of size 10 to represent digits from 0 through 9
 
     y_train_o = np.eye(n_values)[y_train]
     y_test_o = np.eye(n_values)[y_test]
@@ -147,7 +149,57 @@ def plot_examples_alphadigits(X_train, x_generated):
         else:
             plt.imshow(x_generated[i - 1], cmap='gray')
             plt.title('generated ex {0}'.format(i))
-
         plt.axis('off')
 
+    plt.show()
+
+
+def visualize_mnist_examples(X_train, y_train, num_row = 3, num_col = 5):
+    """
+    Takes X_train, y_train, num_row and num_col as input,
+    plot num_row + num_col examples randomly selected from X_train
+    """
+
+    num = num_row + num_col
+    indices = np.random.choice(np.arange(X_train.shape[0]), size=num)
+    images = X_train[indices]
+    labels = np.argmax(y_train[indices], axis=1)
+
+    # plot images
+    fig, axes = plt.subplots(num_row, num_col, figsize=(1.5 * num_col, 2 * num_row))
+    for i in range(num):
+        ax = axes[i // num_col, i % num_col]
+        ax.imshow(images[i].reshape(28, 28), cmap='gray')
+        ax.set_title('Label: {}'.format(labels[i]))
+        ax.axis('off')
+    plt.tight_layout()
+    plt.savefig('{0}{1}.png'.format(imagepath, 'MNIST_plot'))
+    plt.show()
+
+def visualize_alphadigits_examples(num_row = 3, num_col = 5):
+    """
+    Takes X_train, y_train, num_row and num_col as input,
+    plot num_row + num_col examples randomly selected from X_train
+    """
+
+    num = num_row + num_col
+    characters = ['{0}'.format(i) for i in range(10)] + list(map(chr, range(65, 91)))
+    indices = np.random.choice(np.arange(len(characters)), size=num)
+
+    images = []
+    labels = []
+
+    for char in indices:
+        images.append(lire_alpha_digit(characters[char])[0])
+        labels.append(characters[char])
+
+    # plot images
+    fig, axes = plt.subplots(num_row, num_col, figsize=(1.5 * num_col, 2 * num_row))
+    for i in range(len(num)):
+        ax = axes[i // num_col, i % num_col]
+        ax.imshow(images[i].reshape(20, 16), cmap='gray')
+        ax.set_title('Label: {}'.format(labels[i]))
+        ax.axis('off')
+    plt.tight_layout()
+    plt.savefig('{0}{1}.png'.format(imagepath, 'AlphaDigits_plot'))
     plt.show()
