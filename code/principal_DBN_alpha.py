@@ -11,14 +11,14 @@ class DBN:
         layers: minimum 1 layer -> RBM
         hidden_units: must be equal to layers + 1
         """
-
         assert (layers >= 1)
+
         self.layers = [None] * layers
         self.hidden_units = hidden_units
         self.num_layers = layers
 
-        for layer in range(layers):
-            self.layers[layer] = RBM.init_RBM(hidden_units[layer], hidden_units[layer + 1])
+        for layer, layer_units in enumerate(hidden_units):
+            self.layers[layer] = RBM.init_RBM(layer_units[0], layer_units[1])
 
 
 def init_DNN(layers, hidden_units):
@@ -37,7 +37,7 @@ def pretrain_DNN(dbn, epochs, lr, taille_batch, data):
     return dbn, err_layers
 
 
-def generer_image_DBN(dbn, nb_images, iter_gibbs):
+def generer_image_DBN(dbn, nb_images, iter_gibbs, visualize = True):
 
   p, q = dbn.layers[0].a.shape[1], dbn.layers[-1].b.shape[1]
   imgs = []
@@ -58,10 +58,11 @@ def generer_image_DBN(dbn, nb_images, iter_gibbs):
 
     #fin generation
     imgs.append(1 * v.reshape(20, 16))
-    plt.figure()
-    plt.imshow(imgs[-1], cmap='gray') # AlphaDigits
-    plt.title("Generated image after {0} iterations".format(iter_gibbs))
-    plt.show()
+    if visualize:
+        plt.figure()
+        plt.imshow(imgs[-1], cmap='gray') # AlphaDigits
+        plt.title("Generated image after {0} iterations".format(iter_gibbs))
+        plt.show()
 
   return np.array(imgs)
 

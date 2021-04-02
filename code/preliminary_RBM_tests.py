@@ -1,5 +1,10 @@
 """
-This script evaluate the performance of a RBM network
+This script evaluate the performance of a RBM network.
+
+It first defines two functions to help evaluate the learning process (quantitatevely) with a learning curve.
+Also, it plots some generated examples to assess the power of network in learning the distribution of characters.
+
+Results are saved in ../images/RBM_analysis
 """
 
 import utils
@@ -117,7 +122,7 @@ char = 'C'
 RBM_quant_analysis(char, best_q, best_lr, n_epochs, best_bs, True, imagepath+"RBM_eqm_char{0}".format(char));
 
 
-## Qualitative analysis character 3
+## Qualitative analysis
 
 nb_images, nb_iterations = 3, 1000
 
