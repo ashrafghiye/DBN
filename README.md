@@ -73,7 +73,7 @@ DNN.test_DNN(dnn, X_test, y_test, "Title")
 
 The script `main.py` run one of three comparisons between two deep neural networks used to classify MNIST digits. The first neural was pre-trained in unsipervised way using Deep Belief Networks, and the second was randomly initialized.
 
-Running this script will result in 2 images describing the accuracy and crossentropy on test set for both models as function of one of these cases:
+Running this script will result in 2 images describing the accuracy and crossentropy on test set for both models for one of these cases:
 
 1- Number of layers.
 
