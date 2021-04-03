@@ -43,7 +43,7 @@ RBM.generer_image_RBM(rbm, nb_images, nb_iterations)
 
 The script `main.py` run three comparisons between two deep neural networks used to classify MNIST digits. The first neural was pre-trained in unsipervised way using Deep Belief Networks, and the second was randomly initialized.
 
-Running this script will result in 3 images describing the accuracy for both models as function of 
+Running this script will result in 3 images describing the accuracy for both models as function of:
 
 1- Number of layers
 
