@@ -62,6 +62,12 @@ dnn, _ = DBN.pretrain_DNN(dnn, n_epochs_rbm, lr, batch_size, X_train)
 dnn = DNN.retropropagation(dnn, X_train, y_train, n_epochs_retro, lr, batch_size, "pre-trained")
 ```
 
+To test the performance of your network, you can use the below function, which will plot the confusion matrix and return the accuracy and crossentropy on the test set.
+
+```python
+test_DNN(dnn, X_test, y_test, "Title")
+```
+
 
 ## Analysis
 
