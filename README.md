@@ -30,7 +30,8 @@ For example, here is a snipped code to load a dataset, train an RBM and start ge
 import principal_RBM_alpha as RBM
 from utils import lire_alpha_digit
 
-X_train = lire_alpha_digit('3')
+char = '3'
+X_train = lire_alpha_digit(char)
 
 p = X_train.shape[1]
 q = 240
