@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 class RBM:
   def __init__(self, p, q, sigma):
     """
-    sigma: variance des poids
+    sigma: ecart-type des poids
     """
     self.W = np.random.normal(0, sigma, size=(p,q))
     self.a = np.zeros(shape=(1, p))
