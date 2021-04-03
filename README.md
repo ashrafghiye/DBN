@@ -44,6 +44,24 @@ Here is the kind of results you would get
 
 ![RBM_generated_char3](https://user-images.githubusercontent.com/24767888/113482714-33393f00-94a0-11eb-87ff-3431ebefc351.png)
 
+Defining a pre-trained DNN for classification can be as simple as:
+
+```python
+import principal_DNN_MNIST as DNN
+import principal_DBN_alpha as DBN
+from utils import load_mnist
+
+X_train, X_test, y_train, y_test = load_mnist()
+
+p = X_train.shape[1]
+q = y_train.shape[1]
+neurons = [(p, 256), (256, 128), (128, q)]
+
+dnn = DBN.init_DNN(num_layers, neurons)
+dnn, _ = DBN.pretrain_DNN(dnn, n_epochs_rbm, lr, batch_size, X_train)
+dnn = DNN.retropropagation(dnn, X_train, y_train, n_epochs_retro, lr, batch_size, "pre-trained")
+```
+
 
 ## Analysis
 
