@@ -1,12 +1,9 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
 from sklearn.datasets import fetch_openml
-
 import scipy
 import os
-
 import wget
 
 datapath = '../data/'
