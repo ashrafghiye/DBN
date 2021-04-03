@@ -1,5 +1,5 @@
 # Deep Belief Networks and Deep Neural Networks
-Deep Learning II project: DBN-DNN
+Deep Learning II project
 
 This project has two goals:
 
