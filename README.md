@@ -1,7 +1,7 @@
 # Deep Belief Networks and Deep Neural Networks
 Deep Learning II project: DBN-DNN
 
-This project has two goals
+This project has two goals:
 
 First, it aims to implement a **Restricted Boltzman Machine** and a **Deep Belief Network** and use them as Generative Models.
 
@@ -45,11 +45,11 @@ The script `main.py` run three comparisons between two deep neural networks used
 
 Running this script will result in 3 images describing the accuracy for both models as function of:
 
-1- Number of layers
+1- Number of layers.
 
-2- Number of hidden units
+2- Number of hidden units.
 
-3- Number of training examples
+3- Number of training examples.
 
 
 For a detailed analysis, refer to the final report.
