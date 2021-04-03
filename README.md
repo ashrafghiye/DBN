@@ -12,7 +12,7 @@ Second, it aims to study the classification of handwritten digits using a random
 
 - Jupyter notebook `DL2.ipynb` which is a step by step guide of the study. 
 
-- The same code is organized in python scripts in `code'. 
+- The same code is organized in python scripts in `code`. 
 
 - The resulted plots are saved in `images`.
 
@@ -38,3 +38,23 @@ rbm = RBM.init_RBM(p,q)
 rbm = RBM.train_RBM(rbm, n_epochs, learning_rate, batch_size, X_train)
 RBM.generer_image_RBM(rbm, nb_images, nb_iterations)
 ```
+
+## Analysis
+
+The script `main.py` run three comparisons between two deep neural networks used to classify MNIST digits. The first neural was pre-trained in unsipervised way using Deep Belief Networks, and the second was randomly initialized.
+
+Running this script will result in 3 images describing the accuracy for both models as function of 
+
+1- Number of layers
+
+2- Number of hidden units
+
+3- Number of training examples
+
+
+For a detailed analysis, refer to the final report.
+
+
+### Note
+
+The code is a mix of French (function names) and English (documentation and analysis).
