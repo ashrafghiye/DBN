@@ -42,7 +42,8 @@ RBM.generer_image_RBM(rbm, nb_images, nb_iterations)
 
 Here is the kind of results you would get
 
-![RBM_generated_char3](https://user-images.githubusercontent.com/24767888/113482676-06852780-94a0-11eb-8088-96a6fdfb47b9.png)
+![RBM_generated_char3](https://user-images.githubusercontent.com/24767888/113482714-33393f00-94a0-11eb-87ff-3431ebefc351.png)
+
 
 ## Analysis
 
