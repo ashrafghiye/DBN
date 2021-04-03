@@ -56,6 +56,8 @@ Running this script will result in 3 images describing the accuracy for both mod
 For a detailed analysis, refer to the final report.
 
 
-### Note
+### Notes
 
-The code is a mix of French (function names) and English (documentation and analysis).
+- Everything is coded from scratch using numpy, including the backpropagation.
+
+- The code is a mix of French (function names) and English (documentation and analysis).
