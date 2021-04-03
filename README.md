@@ -1,7 +1,7 @@
 # Deep Belief Networks and Deep Neural Networks
-Deep Learning II project: DBN-DNN
+Deep Learning II project
 
-This project has two goals
+This project has two goals:
 
 First, it aims to implement a **Restricted Boltzman Machine** and a **Deep Belief Network** and use them as Generative Models.
 
@@ -10,4 +10,59 @@ Second, it aims to study the classification of handwritten digits using a random
 
 ## Content
 
-In the project folder, you can find a Jupyter notebook `DL2.ipynb` which is a step by step guide of the implementation. The folder `code` contains the same code organized in python scripts. The resulted plots are saved in `images` and the necessary data are stored in `data`.
+- Jupyter notebook `DL2.ipynb` which is a step by step guide of the study. 
+
+- The same code is organized in python scripts in `code`. 
+
+- The resulted plots are saved in `images`.
+
+- The necessary data are stored in `data`.
+
+## Use
+
+The folder `code` contains three class definitions `principal_RBM_alpha`, `principal_DBN_alpha`, `principal_DNN_MNIST`. These files can be imported directly in a main script and be used directly.
+
+Also the file `utils.py` contains necessary and useful functions, such as two functions to load the MNIST and AlphaDigits datasets.
+
+For example, here is a snipped code to load a dataset, train an RBM and start generating artificial examples:
+
+```python
+import principal_RBM_alpha as RBM
+from utils import lire_alpha_digit
+
+char = '3'
+X_train = lire_alpha_digit(char)
+
+p = X_train.shape[1]
+q = 240
+rbm = RBM.init_RBM(p,q)
+rbm = RBM.train_RBM(rbm, n_epochs, learning_rate, batch_size, X_train)
+RBM.generer_image_RBM(rbm, nb_images, nb_iterations)
+```
+
+Here is the kind of results you would get
+
+![RBM_generated_char3](https://user-images.githubusercontent.com/24767888/113482714-33393f00-94a0-11eb-87ff-3431ebefc351.png)
+
+
+## Analysis
+
+The script `main.py` run three comparisons between two deep neural networks used to classify MNIST digits. The first neural was pre-trained in unsipervised way using Deep Belief Networks, and the second was randomly initialized.
+
+Running this script will result in 3 images describing the accuracy for both models as function of:
+
+1- Number of layers.
+
+2- Number of hidden units.
+
+3- Number of training examples.
+
+
+For a detailed analysis, refer to the final report.
+
+
+### Notes
+
+- Everything is coded from scratch using numpy, including the backpropagation.
+
+- The code is a mix of French (function names) and English (documentation and analysis).
