@@ -36,11 +36,7 @@ def DBN_quant_analysis(char='3', num_layers=3, neurons=None, lr=0.2, n_epochs=20
     if visualize:
         plt.figure()
         plt.plot(range(n_epochs), err_eqm[layer])
-        plt.title('EQM: lr={0}, bs={1}, epochs={2}, neruons={3}, char={4}, layer={5}'.format(lr, batch_size, n_epochs,
-                                                                                             "/".join(
-                                                                                                 [str(n[1]) for n in
-                                                                                                  neurons]), char,
-                                                                                             layer))
+        plt.title('EQM: lr={0}, bs={1}, epochs={2}, neruons={3}, char={4}, layer={5}'.format(lr, batch_size, n_epochs, "/".join([str(n[1]) for n in neurons]), char, layer))
         plt.xlabel('epochs')
         plt.ylabel('EQM')
         if imagepath.split('/')[-1] != "DBN_analysis":
