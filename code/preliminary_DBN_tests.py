@@ -74,7 +74,9 @@ layer = 0
 DBN_quant_analysis(char, num_layers, neurons, lr, n_epochs, batch_size, layer, True, imagepath+"DBN_eqm_char{0}_layer{1}".format(char, layer));
 layer = 2
 DBN_quant_analysis(char, num_layers, neurons, lr, n_epochs, batch_size, layer, True, imagepath+"DBN_eqm_char{0}_layer{1}".format(char, layer));
+
 char = 'C'
+layer = 0
 DBN_quant_analysis(char, num_layers, neurons, lr, n_epochs, batch_size, layer, True, imagepath+"DBN_eqm_char{0}_layer{1}".format(char, layer));
 layer = 2
 DBN_quant_analysis(char, num_layers, neurons, lr, n_epochs, batch_size, layer, True, imagepath+"DBN_eqm_char{0}_layer{1}".format(char, layer));

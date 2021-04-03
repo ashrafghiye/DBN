@@ -118,6 +118,7 @@ best_bs
 ## Learning curve
 char = '3'
 RBM_quant_analysis(char, best_q, best_lr, n_epochs, best_bs, True, imagepath+"RBM_eqm_char{0}".format(char));
+
 char = 'C'
 RBM_quant_analysis(char, best_q, best_lr, n_epochs, best_bs, True, imagepath+"RBM_eqm_char{0}".format(char));
 
