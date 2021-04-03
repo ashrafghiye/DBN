@@ -40,6 +40,10 @@ rbm = RBM.train_RBM(rbm, n_epochs, learning_rate, batch_size, X_train)
 RBM.generer_image_RBM(rbm, nb_images, nb_iterations)
 ```
 
+Here is the kind of results you would get
+
+![RBM_generated_char3](https://user-images.githubusercontent.com/24767888/113482676-06852780-94a0-11eb-8088-96a6fdfb47b9.png)
+
 ## Analysis
 
 The script `main.py` run three comparisons between two deep neural networks used to classify MNIST digits. The first neural was pre-trained in unsipervised way using Deep Belief Networks, and the second was randomly initialized.
