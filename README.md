@@ -18,7 +18,7 @@ Second, it aims to study the classification of handwritten digits using a random
 
 - The resulted plots are saved in `images`.
 
-- The necessary data are stored in `data`.
+- The datasets are stored in `data`.
 
 ## Use
 
