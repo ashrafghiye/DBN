@@ -1,0 +1,4 @@
+torch
+sklearn.datasets 
+scipy
+wget
