@@ -3,14 +3,16 @@ Deep Learning II project
 
 This project has two goals:
 
-First, it aims to implement a **Restricted Boltzman Machine** and a **Deep Belief Network** and use them as Generative Models.
+The First, is to implement a **Restricted Boltzman Machine** and a **Deep Belief Network** and use them as Generative Models.
 
 Second, it aims to study the classification of handwritten digits using a randomly initialized DNN and another DNN pre-trained using DBN.
 
 
 ## Content
 
-- Jupyter notebook `DL2.ipynb` which is a step by step guide of the study. 
+- Jupyter notebook `Numpy_Notebook.ipynb` which is a step by step guide of the study, all operations are coded using numpy from scratch.
+
+- Jupyter notebook `Torch_Notebook.ipynb` is the exact same notebook but using torch tensors to benefit from Colab's GPU.
 
 - The same code is organized in python scripts in `code`. 
 
@@ -92,3 +94,5 @@ For a detailed analysis, refer to the final report.
 - Everything is coded from scratch using numpy, including the backpropagation.
 
 - The code is a mix of French (function names) and English (documentation and analysis).
+
+- To test Deep Neural Networks, use torch notebook for efficient backpropagation.
