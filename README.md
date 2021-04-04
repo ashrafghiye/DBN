@@ -10,9 +10,9 @@ Second, it aims to study the classification of handwritten digits using a random
 
 ## Content
 
-- Jupyter notebook `Numpy_Notebook.ipynb` which is a step by step guide of the study, all operations are coded using numpy from scratch.
+- ~~Jupyter notebook `Numpy_Notebook.ipynb` which is a step by step guide of the study, all operations are coded using numpy from scratch.~~
 
-- Jupyter notebook `Torch_Notebook.ipynb` is the exact same notebook but using torch tensors to benefit from Colab's GPU.
+- ~~Jupyter notebook `Torch_Notebook.ipynb` is the exact same notebook but using torch tensors to benefit from Colab's GPU.~~
 
 - The same code is organized in python scripts in `code`. 
 
