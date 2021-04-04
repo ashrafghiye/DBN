@@ -95,4 +95,4 @@ For a detailed analysis, refer to the final report.
 
 - The code is a mix of French (function names) and English (documentation and analysis).
 
-- To test Deep Neural Networks, use torch notebook for efficient backpropagation.
+- ~~To test Deep Neural Networks, use torch notebook for efficient backpropagation.~~
