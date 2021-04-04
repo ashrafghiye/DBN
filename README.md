@@ -3,7 +3,7 @@ Deep Learning II project
 
 This project has two goals:
 
-The First, is to implement a **Restricted Boltzman Machine** and a **Deep Belief Network** and use them as Generative Models.
+The First is to implement a **Restricted Boltzman Machine** and a **Deep Belief Network** and use them as Generative Models.
 
 Second, it aims to study the classification of handwritten digits using a randomly initialized DNN and another DNN pre-trained using DBN.
 
